@@ -72,7 +72,7 @@ export const SITE_INFO = {
   },
   authorCredit: {
     text: "Daniel Jorge",
-    url: "https://www.devdanieljorge.com.br/",
+    url: "https://www.danieljorge.dev.br/",
   },
 };
 
