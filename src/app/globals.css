@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-green: #2d7a38;
+    --brand-green-deep: #246530;
+    --brand-red: #e53935;
+    --brand-cream: #fbf9f5;
+    --brand-sage: #eef4ee;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    color: #202722;
+    background-color: #faf9f6;
+    font-family: var(--font-jakarta), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: var(--font-playfair), Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f0eb;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d7a38;
+  border-radius: 9999px;
+  border: 2px solid #f1f0eb;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #246530;
+}
+
+/* Soft blur backdrops */
+.glass-nav {
+  background-color: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Custom subtle organic border radius like reference image */
+.rounded-organic-hero {
+  border-radius: 2rem 2rem 2rem 2rem;
+}
+
+@media (min-width: 1024px) {
+  .rounded-organic-hero {
+    border-radius: 3rem 1.5rem 3rem 1.5rem;
+  }
+}
+
+/* Pulse animation for WhatsApp floating button */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-pulse {
+  animation: pulse-ring 2.4s infinite;
+}
