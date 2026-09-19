@@ -91,7 +91,7 @@ export default function ScrollReveal({
   const { hidden, visible: visibleClass } = variantMap[variant];
 
   return (
-    // @ts-expect-error - dynamic tag ref typing
+    //* @ts-expect-error - dynamic tag ref typing *//
     <Tag
       ref={ref}
       className={`${hidden} ${visible ? visibleClass : ""} ${className}`}
