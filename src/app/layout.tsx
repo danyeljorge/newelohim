@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans, Caveat } from "next/font/google";
 import "./globals.css";
 import { SITE_INFO } from "@/data/site-data";
+import Script from "next/script";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -70,6 +71,23 @@ export default function RootLayout({
       className={`${playfair.variable} ${jakarta.variable} ${caveat.variable} scroll-smooth`}
     >
       <body className="min-h-screen bg-[#faf9f6] text-[#1b241d] antialiased selection:bg-elohim-green-100 selection:text-elohim-green-900">
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-3RG8HPXFHT"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-3RG8HPXFHT');
+            `,
+          }}
+        />
         {children}
       </body>
     </html>
